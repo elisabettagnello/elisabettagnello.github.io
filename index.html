@@ -16,7 +16,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
-  <script>document.documentElement.classList.add('js')</script>
   <script src="assets/script.js" defer></script>
 </head>
 <body>
@@ -48,32 +47,31 @@
         </ul>
       </div>
 
-      <!-- TODO: add the CV file to the repository root as cv.pdf -->
       <a class="cv" href="cv.pdf" download>Download CV</a>
     </aside>
 
     <main class="main card" id="content">
-      <nav class="nav" aria-label="Main">
-        <a href="#about" data-page="about" aria-current="page">About</a>
-        <a href="#education" data-page="education">Education</a>
-        <a href="#projects" data-page="projects">Projects</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about" aria-current="true">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
         <a href="https://elisabettagnello.github.io/elisabetta-physics-notes/">Notes</a>
       </nav>
 
-      <article class="page on" id="about" aria-labelledby="about-h">
+      <section class="section" id="about" aria-labelledby="about-h">
         <h2 class="title" id="about-h">About</h2>
-        <p>I'm an M.Sc. student in Physics at Sapienza University of Rome, graduating in February 2027. I study statistical physics and complex systems: how systems made of many interacting parts behave, and how to test models of them against data.</p>
-        <p>Most of my work is in Python: simulating models, fitting them to data, and checking the result against a known answer. I'm at my best when a messy dataset has to become a clear, defensible conclusion.</p>
-      </article>
+        <p>I'm finishing an M.Sc. in Physics at Sapienza University of Rome, with a focus on statistical physics and complex systems. I graduate in February 2027.</p>
+        <p>What I enjoy most is the stretch between a model and the data it is meant to explain: building the model, fitting it, and testing the whole analysis on a case where the answer is known. Most of that happens in Python.</p>
+      </section>
 
-      <article class="page" id="education" aria-labelledby="education-h">
+      <section class="section" id="education" aria-labelledby="education-h">
         <h2 class="title" id="education-h">Education</h2>
         <ul class="timeline">
           <li>
             <h3>M.Sc. in Physics, Statistical Physics and Complex Systems</h3>
             <span class="when">Oct 2024 to Feb 2027 (expected)</span>
             <p class="where">Sapienza University of Rome</p>
-            <p>Average 29.5/30, with three exams passed cum laude. Thesis at the Istituto Superiore di Sanità on the dynamics of recurrent neural networks, in progress.</p>
+            <p>Average 29.5/30, with three exams passed cum laude. My thesis, at the Istituto Superiore di Sanità, is on the dynamics of recurrent neural networks.</p>
           </li>
           <li>
             <h3>B.Sc. in Physics</h3>
@@ -82,40 +80,62 @@
             <p>Final grade 108/110. Thesis on Bose–Einstein condensation in helium-4.</p>
           </li>
         </ul>
-      </article>
+      </section>
 
-      <article class="page" id="projects" aria-labelledby="projects-h">
+      <section class="section" id="projects" aria-labelledby="projects-h">
         <h2 class="title" id="projects-h">Projects</h2>
 
-        <section class="project" aria-labelledby="p-thesis">
-          <h3 id="p-thesis">Dynamics of recurrent neural networks</h3>
-          <p class="meta">M.Sc. thesis, Istituto Superiore di Sanità, Rome. July 2026 to now, in progress.</p>
-          <p>Amari–Hopfield networks are a classic model of memory: a recurrent neural network stores patterns and retrieves them from a noisy cue. I study what happens when neurons can connect to themselves (autapses) and the couplings between them are asymmetric. Does the network still retrieve the stored patterns, or does it switch to irregular, self-sustained activity?</p>
-          <p>I use mean-field theory and linear stability analysis, and test the predictions against numerical integration of the full dynamics in Python.</p>
-        </section>
-
-        <section class="project" aria-labelledby="p-iit">
-          <h3 id="p-iit">Cytoplasm partitioning and growth in Jurkat cells</h3>
-          <p class="meta">Research internship, Istituto Italiano di Tecnologia, Rome. March to July 2025.</p>
-          <p>Part of a team of physicists and biologists studying why tumour cells differ from one another even without genetic mutations. I took part in the experiments and was responsible for the data analysis. From flow cytometry measurements on Jurkat cells (two independent experiments, 11 time points each, about 10<sup>6</sup> cells per sample), I separated overlapping cell generations with a Gaussian mixture model, measured how evenly the cytoplasm is split at division, and followed cell size through the cell cycle.</p>
-          <p>The split is almost equal (a fraction between 0.52 and 0.55, against 0.50 for a perfect split) and size control is adder-like: cells add a roughly constant amount of mass at each cycle. Testing the pipeline on synthetic data revealed a small bias of about 0.01 in the estimate.</p>
-          <div class="links">
-            <a href="https://github.com/elisabettagnello/jurkat-cell-division">Code</a>
-            <a href="https://elisabettagnello.github.io/jurkat-cell-division/presentation/">Slides</a>
-            <a href="https://elisabettagnello.github.io/jurkat-cell-division/report/Internship_report_IIT.pdf">Report</a>
+        <article class="project" aria-labelledby="p-thesis">
+          <div class="body">
+            <h3 id="p-thesis">Dynamics of recurrent neural networks</h3>
+            <p class="meta">M.Sc. thesis · Istituto Superiore di Sanità, Rome · July 2026 to now (in progress)</p>
+            <p>Amari–Hopfield networks store memories as patterns of neural activity and recall them from a partial or noisy cue. I'm studying how this breaks down when neurons can connect to themselves (autapses) and the connections between neurons are asymmetric: does the network keep recalling, or does its activity turn irregular and self-sustained?</p>
+            <p>I approach it with mean-field theory and linear stability analysis, and check the predictions against numerical simulations of the full dynamics in Python.</p>
           </div>
-        </section>
+        </article>
 
-        <section class="project" aria-labelledby="p-echo">
-          <h3 id="p-echo">Echo chambers from influence and unfollowing</h3>
-          <p class="meta">Physics of Complex Systems, Sapienza University of Rome. 2025/26.</p>
-          <p>A from-scratch Python implementation of the agent-based model of Sasahara et al. (2021). Agents shift their opinion towards people who agree with them, and sometimes unfollow those who don't. Seeded parameter sweeps, up to 10<sup>4</sup> agents, reproduce the main results: tolerance for other opinions decides whether the network ends in consensus, in bubbles or in fragments, and influence and unfollowing together form bubbles much faster than either alone.</p>
-          <div class="links">
-            <a href="https://github.com/elisabettagnello/echo-chambers-dynamics">Code</a>
-            <a href="https://elisabettagnello.github.io/echo-chambers-dynamics/presentation/">Slides</a>
+        <article class="project" aria-labelledby="p-iit">
+          <div class="body">
+            <h3 id="p-iit">Cytoplasm partitioning and growth in Jurkat cells</h3>
+            <p class="meta">Research internship · Istituto Italiano di Tecnologia, Rome · March to July 2025</p>
+            <p>A team of physicists and biologists wanted to know why tumour cells differ from one another even without genetic mutations. I helped run the experiments and was responsible for the data analysis: flow cytometry on Jurkat cells, in two independent experiments of 11 time points each, with about 10<sup>6</sup> cells per sample.</p>
+            <p>I cleaned the data, separated overlapping cell generations with a Gaussian mixture model, and fitted a model of cell division to measure how evenly the cytoplasm is split. It is almost equal: a fraction of 0.52 to 0.55, where 0.50 is a perfect split. Cell size is controlled like an adder, with each cell adding a roughly constant amount of mass per cycle. Testing the pipeline on synthetic data revealed a small bias of about 0.01 in the estimate.</p>
+            <div class="links">
+              <a href="https://github.com/elisabettagnello/jurkat-cell-division">Code</a>
+              <a href="https://elisabettagnello.github.io/jurkat-cell-division/presentation/">Slides</a>
+              <a href="https://elisabettagnello.github.io/jurkat-cell-division/report/Internship_report_IIT.pdf">Report</a>
+            </div>
           </div>
-        </section>
-      </article>
+          <!-- <figure class="shot"><img src="assets/img/jurkat.webp" alt="Describe the figure here" width="540" height="400"><figcaption>Caption.</figcaption></figure> -->
+        </article>
+
+        <article class="project" aria-labelledby="p-echo">
+          <div class="body">
+            <h3 id="p-echo">Echo chambers from influence and unfollowing</h3>
+            <p class="meta">Physics of Complex Systems · Sapienza University of Rome · 2025/26</p>
+            <p>Can people end up in separate bubbles just by listening to those who agree with them and dropping those who don't? To find out, I implemented from scratch, in Python, the agent-based model of a social network by Sasahara et al. (2021).</p>
+            <p>Seeded parameter sweeps, up to 10<sup>4</sup> agents, reproduce the main results: tolerance for other opinions decides whether the network ends in consensus, in bubbles or in fragments, and influence and unfollowing together form bubbles far faster than either alone.</p>
+            <div class="links">
+              <a href="https://github.com/elisabettagnello/echo-chambers-dynamics">Code</a>
+              <a href="https://elisabettagnello.github.io/echo-chambers-dynamics/presentation/">Slides</a>
+            </div>
+          </div>
+          <!-- <figure class="shot"><img src="assets/img/echo-chambers.webp" alt="Describe the figure here" width="540" height="400"><figcaption>Caption.</figcaption></figure> -->
+        </article>
+
+        <article class="project" aria-labelledby="p-notes">
+          <div class="body">
+            <h3 id="p-notes">Physics lecture notes</h3>
+            <p class="meta">Personal project · ongoing</p>
+            <p>Open-source LaTeX notes for my M.Sc. courses, from statistical mechanics to neural networks and biophysics. They are written in Italian, compiled and published automatically with GitHub Actions on every push, and used by other students in my year.</p>
+            <div class="links">
+              <a href="https://elisabettagnello.github.io/elisabetta-physics-notes/">Browse the notes</a>
+              <a href="https://github.com/elisabettagnello/elisabetta-physics-notes">Source</a>
+            </div>
+          </div>
+          <!-- <figure class="shot"><img src="assets/img/notes.webp" alt="Describe the image here" width="540" height="400"><figcaption>Caption.</figcaption></figure> -->
+        </article>
+      </section>
     </main>
 
   </div>
