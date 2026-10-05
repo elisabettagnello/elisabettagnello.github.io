@@ -100,7 +100,7 @@ a.c-value:hover { color: var(--accent); }
 .project:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
 .project:has(.shot) { grid-template-columns: minmax(0, 1fr) 270px; align-items: start; }
 .project h3 { font-size: 1.22rem; font-weight: 500; line-height: 1.35; color: var(--text); }
-.meta { margin: .3rem 0 .9rem; font-size: .83rem; line-height: 1.5; color: var(--accent); }
+.meta { margin: .3rem 0 .9rem; font-size: .93rem; line-height: 1.5; color: var(--accent); }
 .body p { max-width: 62ch; }
 .body p + p { margin-top: .8rem; }
 .shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
