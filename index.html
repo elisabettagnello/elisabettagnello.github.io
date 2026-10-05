@@ -69,8 +69,6 @@
           <li>
             <h3>M.Sc. in Physics</h3>
              <p class="meta">Sapienza University of Rome ·  Oct 2024 to 2027 (expected)</p>
-            <p>Average 29.5/30, with three exams passed cum laude.</p>
-            <p>My thesis, at the Istituto Superiore di Sanità, is on the dynamics of recurrent neural networks.</p>
           </li>
           <li>
             <h3>B.Sc. in Physics</h3>
@@ -88,8 +86,7 @@
           <div class="body">
             <h3 id="p-thesis">Dynamics of recurrent neural networks</h3>
             <p class="meta">M.Sc. thesis · Istituto Superiore di Sanità, Rome · July 2026 to now (in progress)</p>
-            <p>Amari–Hopfield networks store memories as patterns of neural activity and recall them from a partial or noisy cue. I'm studying how this breaks down when neurons can connect to themselves (autapses) and the connections between neurons are asymmetric: does the network keep recalling, or does its activity turn irregular and self-sustained?</p>
-            <p>I approach it with mean-field theory and linear stability analysis, and check the predictions against numerical simulations of the full dynamics in Python.</p>
+            <p>I'm studying a recurrent Amari–Hopfield network whose synaptic matrix has a diagonal part (autapses) and an asymmetric part in the style of Sompolinsky. The work combines theory (mean-field theory, linear stability analysis) with numerical simulations in Python.</p>
           </div>
         </article>
 
@@ -97,36 +94,38 @@
           <div class="body">
             <h3 id="p-iit">Cytoplasm partitioning and growth in Jurkat cells</h3>
             <p class="meta">Research internship · Istituto Italiano di Tecnologia, Rome · March to July 2025</p>
-            <p>A team of physicists and biologists wanted to know why tumour cells differ from one another even without genetic mutations. I helped run the experiments and was responsible for the data analysis: flow cytometry on Jurkat cells, in two independent experiments of 11 time points each, with about 10<sup>6</sup> cells per sample.</p>
-            <p>I cleaned the data, separated overlapping cell generations with a Gaussian mixture model, and fitted a model of cell division to measure how evenly the cytoplasm is split. It is almost equal: a fraction of 0.52 to 0.55, where 0.50 is a perfect split. Cell size is controlled like an adder, with each cell adding a roughly constant amount of mass per cycle. Testing the pipeline on synthetic data revealed a small bias of about 0.01 in the estimate.</p>
+            <p>From March to July 2025 I did a research internship at the Center for Life Nano Science of the Istituto Italiano di Tecnologia in Rome, in a team of physicists and biologists studying cytoplasm partitioning and size control in Jurkat cells. I took part in the experiments and was in charge of the data analysis.</p>
+            <p>The data came from flow cytometry: two independent experiments of 11 time points each, with about 10<sup>6</sup> cells per sample. I wrote the Python pipeline that cleans the data, separates cell generations with a Gaussian mixture model fitted by EM, and fits an asymmetric binomial model of partitioning. The cytoplasm turned out to be split almost evenly, and cell size is controlled in an adder-like way.</p>
             <div class="links">
               <a href="https://github.com/elisabettagnello/jurkat-cell-division">Code</a>
-              <a href="https://elisabettagnello.github.io/jurkat-cell-division/presentation/">Slides</a>
+              <a href="https://elisabettagnello.github.io/jurkat-cell-division/presentation/">Presentation</a>
               <a href="https://elisabettagnello.github.io/jurkat-cell-division/report/Internship_report_IIT.pdf">Report</a>
             </div>
           </div>
-          <figure class="shot"><img src="assets/img/jurkat.png" alt="Describe the figure here" width="540" height="400"></figure> -->
+          <figure class="shot"><img src="assets/img/jurkat.png" alt="Describe the figure here" width="540" height="400"></figure> 
+        
         </article>
 
         <article class="project" aria-labelledby="p-echo">
           <div class="body">
             <h3 id="p-echo">Echo chambers from influence and unfollowing</h3>
             <p class="meta">Physics of Complex Systems · Sapienza University of Rome · 2025/26</p>
-            <p>Can people end up in separate bubbles just by listening to those who agree with them and dropping those who don't? To find out, I implemented from scratch, in Python, the agent-based model of a social network by Sasahara et al. (2021).</p>
-            <p>Seeded parameter sweeps, up to 10<sup>4</sup> agents, reproduce the main results: tolerance for other opinions decides whether the network ends in consensus, in bubbles or in fragments, and influence and unfollowing together form bubbles far faster than either alone.</p>
+            <p>In the second year of my M.Sc., for the Physics of Complex Systems course, I studied the paper "Social influence and unfollowing accelerate the emergence of echo chambers" (Sasahara et al., 2021) and reproduced its results with a Python implementation of the model.</p> 
+            <p>The model couples bounded-confidence opinion dynamics with the rewiring of the follower network. I ran seeded parameter sweeps, up to 10<sup>4</sup> agents, and recovered the main findings: the tolerance ε controls the transition between consensus, echo chambers and fragmentation, and influence and unfollowing together form echo chambers much faster than either mechanism alone.</p>
             <div class="links">
               <a href="https://github.com/elisabettagnello/echo-chambers-dynamics">Code</a>
-              <a href="https://elisabettagnello.github.io/echo-chambers-dynamics/presentation/">Slides</a>
+              <a href="https://elisabettagnello.github.io/echo-chambers-dynamics/presentation/">Presentation</a>
             </div>
+            <figure class="shot"><img src="assets/img/echo.png" alt="Describe the figure here" width="540" height="400"></figure> 
           </div>
-          <figure class="shot"><img src="assets/img/echo.png" alt="Describe the figure here" width="540" height="400"></figure> -->
+          
         </article>
 
         <article class="project" aria-labelledby="p-notes">
           <div class="body">
             <h3 id="p-notes">Physics lecture notes</h3>
             <p class="meta">Personal project · ongoing</p>
-            <p>Open-source LaTeX notes for my M.Sc. courses, from statistical mechanics to neural networks and biophysics. They are written in Italian, compiled and published automatically with GitHub Actions on every push, and used by other students in my year.</p>
+            <p>I write up my M.Sc. courses in LaTeX and publish them as an open-source library for other physics students. I built the website that hosts them, with a searchable and filterable catalogue, and set it up to rebuild automatically whenever the notes change.</p>
             <div class="links">
               <a href="https://elisabettagnello.github.io/elisabetta-physics-notes/">Browse the notes</a>
               <a href="https://github.com/elisabettagnello/elisabetta-physics-notes">Source</a>
