@@ -58,7 +58,7 @@ sup { line-height: 0; }
 .c-value { display: block; font-size: .84rem; line-height: 1.4; color: var(--text); text-decoration: none; word-break: break-all; }
 a.c-value:hover { color: var(--accent); }
 .cv { display: block; margin-top: 26px; padding: .75rem 1rem; text-align: center; font-weight: 600; font-size: .9rem; color: var(--bg); background: var(--accent); border-radius: 12px; text-decoration: none; }
-.cv:hover { background: #ff7c73; }
+.cv:hover { background: #ec7ab0; }
 
 /* ---------- Main card ---------- */
 .main { position: relative; flex: 1; min-width: 0; padding: 44px 44px 56px; }
@@ -87,7 +87,7 @@ a.c-value:hover { color: var(--accent); }
 /* Education timeline */
 .timeline li { position: relative; padding: 0 0 30px 32px; }
 .timeline li:last-child { padding-bottom: 0; }
-.timeline li::before { content: ""; position: absolute; left: 0; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(249, 93, 106, 0.2); }
+.timeline li::before { content: ""; position: absolute; left: 0; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(227, 96, 158, 0.2); }
 .timeline li:not(:last-child)::after { content: ""; position: absolute; left: 4px; top: 24px; bottom: -2px; width: 1px; background: var(--line); }
 .timeline h3 { font-size: 1.08rem; font-weight: 500; line-height: 1.4; color: var(--text); }
 .when { display: block; margin: .15rem 0 .55rem; font-size: .84rem; color: var(--accent); }
