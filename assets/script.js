@@ -1,30 +1,20 @@
 (function () {
-  var pages = Array.prototype.slice.call(document.querySelectorAll('.page'));
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[data-page]'));
-  var ids = pages.map(function (p) { return p.id; });
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a[href^="#"]'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
 
-  function show(id, push) {
-    if (ids.indexOf(id) === -1) id = ids[0];
-    pages.forEach(function (p) { p.classList.toggle('on', p.id === id); });
+  function mark(id) {
     links.forEach(function (a) {
-      if (a.dataset.page === id) a.setAttribute('aria-current', 'page');
+      if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
       else a.removeAttribute('aria-current');
     });
-    if (push) history.replaceState(null, '', '#' + id);
-    document.title = (id === ids[0] ? '' : links.filter(function (a) { return a.dataset.page === id; })[0].textContent + ' | ') + 'Elisabetta Agnello';
   }
 
-  links.forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      e.preventDefault();
-      show(a.dataset.page, true);
-      window.scrollTo({ top: 0 });
-    });
-  });
-  window.addEventListener('hashchange', function () { show(location.hash.slice(1), false); });
-
-  document.documentElement.classList.add('js');
-  show(location.hash.slice(1), false);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) mark(e.target.id); });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    sections.forEach(function (s) { io.observe(s); });
+  }
 
   var btn = document.getElementById('toggle');
   var more = document.getElementById('side-more');
