@@ -1,0 +1,104 @@
+/* Personal adjustments on top of the AcademicPages styles (main.css). */
+
+/* ---------- Colours ---------- */
+:root {
+  --global-link-color: #b03060;
+  --global-link-color-hover: #7f1f45;
+  --global-link-color-visited: #b03060;
+  --accent-sub: #b03060;
+  --divider: rgba(0, 0, 0, 0.09);
+}
+html[data-theme=dark] {
+  --global-link-color: #f48fb8;
+  --global-link-color-hover: #ffc2da;
+  --global-link-color-visited: #f48fb8;
+  --global-masthead-link-color-hover: #f48fb8;
+  --accent-sub: #f48fb8;
+  --divider: rgba(255, 255, 255, 0.14);
+}
+
+/* ---------- Theme toggle ---------- */
+#theme-toggle button { background: none; border: 0; padding: 0 .25em; color: var(--global-masthead-link-color); cursor: pointer; font-size: 1.05em; }
+#theme-toggle button:hover { color: var(--global-link-color); }
+
+/* ---------- Scrolling ---------- */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.page__content h2, .page__title { scroll-margin-top: 80px; }
+
+/* ---------- Type scale ---------- */
+.page__title { font-size: 1.75em; font-weight: 700; margin-bottom: .6em; }
+.page__content p, .page__content li { font-size: .9em; line-height: 1.65; }
+.page__content p { margin: 0 0 .9em; }
+
+/* Section titles (Education, Projects, Skills) */
+.page__content h2 {
+  font-size: 1.35em;
+  font-weight: 700;
+  margin: 2.4em 0 1em;
+  padding-bottom: .35em;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* Entry titles (degrees, projects): small pink dot in front */
+.page__content h3 {
+  position: relative;
+  font-size: 1.05em;
+  font-weight: 600;
+  margin: 0 0 .25em;
+}
+.page__content h3::before {
+  content: "";
+  position: absolute;
+  left: -1em;
+  top: .42em;
+  width: .45em;
+  height: .45em;
+  border-radius: 50%;
+  background: var(--accent-sub);
+}
+
+/* Subtitle under each entry (institution, dates) and secondary text */
+.page__content .sub { margin: 0 0 .8em; font-size: .8em; color: var(--accent-sub); }
+.page__content .small { font-size: .8em; color: var(--global-text-color); opacity: .75; }
+
+/* Thin divider between entries of the same section */
+.page__content > h3 { margin-top: 1.6em; padding-top: 1.6em;}
+.page__content > h2 + h3 { margin-top: 0; padding-top: 0; border-top: 0; }
+.page__content > h3::before { top: calc(1.6em + .42em); }
+.page__content > h2 + h3::before { top: .42em; }
+.project + .project { margin-top: 1.8em; padding-top: 1.8em;}
+
+/* Skills list: pink bullets */
+.page__content ul { padding-left: 1.2em; }
+.page__content ul li::marker { color: var(--accent-sub); }
+.page__content li { margin-bottom: .35em; }
+
+/* ---------- Projects ---------- */
+.page__content .links { font-size: .82em; margin-bottom: 0; }
+.page__content .links a { margin-right: 1.1em; text-decoration: none; }
+.page__content .links a:hover { text-decoration: underline; }
+
+/* Figures: one or two side by side, same height */
+.gallery { display: flex; gap: 1em; margin: 1.2em 0 .8em; }
+.gallery figure { flex: var(--r, 1) 1 0; min-width: 0; margin: 0; display: block; }
+.gallery img, .gallery video { display: block; width: 100%; height: auto; margin: 0; border: 1px solid var(--global-border-color); border-radius: 4px; background: #fff; }
+.gallery img.dark { background: #0b0f2a; }
+.gallery figcaption { margin: .45em 0 0; font-size: .72em; line-height: 1.4; color: var(--global-text-color); opacity: .7; text-align: left; font-family: inherit; }
+@media (max-width: 600px) {
+  .gallery { flex-direction: column; }
+  .gallery figure { flex: none; }
+}
+
+/* ---------- Footer ---------- */
+.page__footer { position: relative; bottom: auto; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .page__content h3 { padding-left: .9em; }
+  .page__content h3::before { left: 0; }
+  .greedy-nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .greedy-nav .visible-links li { white-space: nowrap; }
+  .greedy-nav a, .greedy-nav #theme-toggle > button { margin: 0 .55rem; font-size: .9em; }
+  .greedy-nav .visible-links li:first-child a { margin-left: 0; }
+}
